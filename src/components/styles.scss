@@ -1,0 +1,116 @@
+.mainHeader {
+    &__nav {
+      padding-right: 35px;
+      padding-left: 80px;
+      height: 97px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 31px;
+    }
+  
+    &__pageOptions {
+      display: none;
+      text-decoration: none;
+      list-style: none;
+      &--active {
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        top: 119px;
+        padding-top: 27px;
+        padding-left: 30px;
+        right: 0px;
+        display: block;
+        height: 100%;
+        z-index: 1000;
+  
+        .mainHeader__item {
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__socialMedia {
+      display: none;
+    }
+    &__burguerBtn {
+      display: flex;
+      flex-direction: column;
+      width: 55px;
+      cursor: pointer;
+  
+      &--active {
+        .mainHeader__burguer1 {
+          background-color: transparent;
+          transition-duration: 0.01s;
+        }
+        .mainHeader__burguer2 {
+          transform: rotate(130deg);
+          position: relative;
+        }
+        .mainHeader__burguer3 {
+          transform: rotate(-130deg);
+          position: relative;
+          top: -16px;
+        }
+      }
+    }
+    &__burguer1,
+    &__burguer2,
+    &__burguer3 {
+      background: var(--fontColor);
+      border-radius: 5px;
+      height: 8px;
+      margin-top: 8px;
+      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      width: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    .mainHeader {
+      &__pageOptions {
+        display: flex;
+        height: 100%;
+        width: fit-content;
+      }
+      &__burguerBtn {
+        display: none;
+      }
+      &__item {
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        transition: 0.3s;
+        width: 100px;
+        &:hover {
+          background-color: #00000010;
+        }
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      &__socialMedia {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+  
